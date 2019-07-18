@@ -1,12 +1,12 @@
 {
   "name": "react-read-less-more",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.5",
+  "description": " react read more or less text or chips with delete ",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
-    "transpile": "babel src -d dist",
+    "transpile": "babel src -d dist --copy-files",
     "prepublishOnly": "npm run transpile",
     "build": "webpack --mode production",
     "deploy": "gh-pages -d examples/dist",
@@ -15,6 +15,10 @@
   "author": {
     "name": "yedidi manikanta",
     "email": "maniyedidi@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maniyedidi/react-read-less-more"
   },
   "license": "ISC",
   "peerDependencies": {
@@ -28,6 +32,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -41,13 +46,16 @@
   },
   "keywords": [
     "react",
-    "paragraph",
     "text",
     "charLimit",
     "dots",
     "show more",
+    "show less",
     "ellipsis",
     "read more",
-    "multiline"
+    "read less",
+    "chips delete",
+    "chips show more",
+    "chips show less"
   ]
 }

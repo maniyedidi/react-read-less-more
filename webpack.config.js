@@ -7,6 +7,10 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 module.exports = {
     entry: path.join(__dirname, "examples/src/index.js"),
+    output: {
+        path: path.join(__dirname, "examples/dist"),
+        filename: "bundle.js"
+    },
     module: {
         rules: [
             {
@@ -22,7 +26,7 @@ module.exports = {
     },
     plugins: [htmlWebpackPlugin],
     resolve: {
-        extensions: [".js", ".jsx",".css"]
+        extensions: [".js", ".jsx"]
     },
     devServer: {
         port: 3001

@@ -1,8 +1,7 @@
 # React Read More Less
 
-[![NPM](https://nodei.co/npm/react-read-more-less.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-read-more-less/)
-[![npm version](https://badge.fury.io/js/react-read-more-less.svg)](https://badge.fury.io/js/react-read-more-less)
-![license-isc](https://img.shields.io/github/license/Thamodaran/react-read-more-less.svg)
+[![NPM](https://nodei.co/npm/react-read-less-more.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-read-less-more/)
+[![npm version](https://badge.fury.io/js/react-read-less-more.svg)]
 
 ## Install
 ```
@@ -46,6 +45,7 @@ class ReadMoreAndLessText extends Component {
 ```
 
 ![Screenshot](chipscreenShot.png)
+![Screenshot](sample.png)
 
 ## PROPTYPES
 | Prop | Type | Default |
