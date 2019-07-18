@@ -1,6 +1,6 @@
 {
   "name": "react-read-less-more",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": " react read more or less text or chips with delete ",
   "main": "dist/index.js",
   "scripts": {
@@ -47,8 +47,7 @@
   "keywords": [
     "react",
     "text",
-    "charLimit",
-    "dots",
+    "chips",
     "show more",
     "show less",
     "ellipsis",
