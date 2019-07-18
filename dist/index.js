@@ -58,7 +58,8 @@ var ReactReadLessMore = function (_React$Component) {
                 children = _props.children,
                 data = _props.data,
                 dataItemClass = _props.dataItemClass,
-                deleteChip = _props.deleteChip;
+                deleteChip = _props.deleteChip,
+                deleteIcon = _props.deleteIcon;
 
             return _react2.default.createElement(
                 'div',
@@ -76,7 +77,7 @@ var ReactReadLessMore = function (_React$Component) {
                             'span',
                             { className: displayType === "CHIP" ? 'chip ' + (dataItemClass || '') : "data-item", key: Math.random(), onClick: function onClick() {
                                     return _onClick(element);
-                                } },
+                                }, title: element[displayKey] || element },
                             element[displayKey] || element,
                             ' ',
                             deleteChip && _react2.default.createElement(
@@ -98,12 +99,12 @@ var ReactReadLessMore = function (_React$Component) {
                             'span',
                             (_React$createElement = { key: Math.random(), className: displayType === "CHIP" ? 'chip ' + (dataItemClass || '') : "data-item" }, _defineProperty(_React$createElement, 'key', index), _defineProperty(_React$createElement, 'onClick', function onClick() {
                                 return _onClick(element);
-                            }), _React$createElement),
+                            }), _defineProperty(_React$createElement, 'title', element[displayKey] || element), _React$createElement),
                             element[displayKey] || element,
                             ' ',
                             deleteChip && _react2.default.createElement(
                                 'span',
-                                { className: 'delete-icon', onClick: function onClick() {
+                                { className: deleteIcon, onClick: function onClick() {
                                         deleteChip(element);
                                     } },
                                 '\u2715'
@@ -146,7 +147,8 @@ ReactReadLessMore.defaultProps = {
     displayCount: 4,
     data: [],
     dataItemClass: "",
-    autoClose: false
+    autoClose: false,
+    deleteIcon: 'delete-icon'
 };
 
 ReactReadLessMore.propTypes = {
@@ -158,11 +160,11 @@ ReactReadLessMore.propTypes = {
     displayKey: _propTypes2.default.string,
     dataSeparator: _propTypes2.default.string,
     displayCount: _propTypes2.default.number,
-    children: children,
     data: _propTypes2.default.array,
     dataItemClass: _propTypes2.default.string,
     deleteChip: _propTypes2.default.func,
-    autoClose: _propTypes2.default.bool
+    autoClose: _propTypes2.default.bool,
+    deleteIcon: _propTypes2.default.string
 
 };
 exports.default = ReactReadLessMore;
