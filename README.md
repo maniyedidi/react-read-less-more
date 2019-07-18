@@ -45,6 +45,8 @@ class ReadMoreAndLessText extends Component {
 }
 ```
 
+![Screenshot](chipscreenShot.png)
+
 ## PROPTYPES
 | Prop | Type | Default |
 | ---- | ---- | ------- |
