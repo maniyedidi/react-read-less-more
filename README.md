@@ -52,15 +52,15 @@ class ReadMoreAndLessText extends Component {
 | charLimit | integer | 30 |
 | moreText | String | Read more |
 | lessText | String | Read less |
-| displayType | String | for display as chip displayType = "CHIP" |
-| dataSeparator | String | to separate each data item like ',' or ';' |
-| data | Array | input data array to display array of objects or Array of string  |
-|displayKey| String | key in the data array to be displayed |
-| dataItemClass | String | to customize data item pass the dataItemClass |
-| onClick | String | on click event on element ,to enable add method onClick |
+| displayType | String | for displaying as chip( displayType = "CHIP") |
+| dataSeparator | String | to separate each data item (',' or ';') |
+| data | Array | input data array to display.data can be array objects or array of string/number  |
+| displayKey| String | attribute in the input data, example given above |
+| dataItemClass | String | To customize the data item,pass your custom css class in dataItemClass |
+| onClick | String | To add on click event on element, pass ypur method onClick prop,it will return the data item in input array|
 | deleteChip | String | event will be added to cross icon,to enable add event on element  |
-| deleteIcon | String | class name for delete icon  |
-| autoClose | String | Read less |
+| deleteIcon | String | To customize the delete icon pass the css class name  |
+| autoClose | String | To enable open only one at time , (In progress ) |
 
 
 
