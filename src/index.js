@@ -78,7 +78,6 @@ ReactReadLessMore.propTypes = {
     displayKey: PropTypes.string,
     dataSeparator: PropTypes.string,
     displayCount: PropTypes.number,
-    children,
     data: PropTypes.array,
     dataItemClass: PropTypes.string,
     deleteChip: PropTypes.func,
