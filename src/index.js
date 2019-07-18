@@ -39,13 +39,14 @@ class ReactReadLessMore extends React.Component {
             })}
             {data && data.map((element, index) => {
                 if (index < displayCount) {
-                    return [<span className={displayType === "CHIP" ? `chip ${dataItemClass || ''}` : "data-item"} key={Math.random()} onClick={() => onClick(element)}>
+                    return [<span className={displayType === "CHIP" ? `chip ${dataItemClass || ''}` : "data-item"} key={Math.random()} onClick={() => onClick(element)} title={element[displayKey] || element}>
                         {element[displayKey] || element} {deleteChip && <span className="delete-icon" onClick={() => { deleteChip(element) }}>&#10005;</span>}
                     </span>,
                     <span key={Math.random()}>{dataSeparator}</span>]
                 } else if (!showLessFlag) {
                     return [<span key={Math.random()} className={displayType === "CHIP" ? `chip ${dataItemClass || ''}` : "data-item"} key={index}
-                        onClick={() => onClick(element)}>{element[displayKey] || element} {deleteChip && <span className={deleteIcon} onClick={() => { deleteChip(element) }}>&#10005;</span>}
+                        onClick={() => onClick(element)}  title={element[displayKey] || element}>
+                        {element[displayKey] || element} {deleteChip && <span className={deleteIcon} onClick={() => { deleteChip(element) }}>&#10005;</span>}
                     </span>, <span key={Math.random()}>{dataSeparator}</span>]
                 }
             })}
