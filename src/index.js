@@ -26,7 +26,8 @@ class ReactReadLessMore extends React.Component {
             children,
             data,
             dataItemClass,
-            deleteChip
+            deleteChip,
+            deleteIcon
         } = this.props
         return <div className={clsName ? 'react-read-less-more' : `react-read-less-more ${clsName}`}>
             {children && children.map((element, index) => {
@@ -44,7 +45,7 @@ class ReactReadLessMore extends React.Component {
                     <span key={Math.random()}>{dataSeparator}</span>]
                 } else if (!showLessFlag) {
                     return [<span key={Math.random()} className={displayType === "CHIP" ? `chip ${dataItemClass || ''}` : "data-item"} key={index}
-                        onClick={() => onClick(element)}>{element[displayKey] || element} {deleteChip && <span className="delete-icon" onClick={() => { deleteChip(element) }}>&#10005;</span>}
+                        onClick={() => onClick(element)}>{element[displayKey] || element} {deleteChip && <span className={deleteIcon} onClick={() => { deleteChip(element) }}>&#10005;</span>}
                     </span>, <span key={Math.random()}>{dataSeparator}</span>]
                 }
             })}
@@ -64,7 +65,8 @@ ReactReadLessMore.defaultProps = {
     displayCount: 4,
     data: [],
     dataItemClass: "",
-    autoClose: false
+    autoClose: false,
+    deleteIcon: 'delete-icon'
 }
 
 ReactReadLessMore.propTypes = {
@@ -80,7 +82,8 @@ ReactReadLessMore.propTypes = {
     data: PropTypes.array,
     dataItemClass: PropTypes.string,
     deleteChip: PropTypes.func,
-    autoClose: PropTypes.bool
+    autoClose: PropTypes.bool,
+    deleteIcon: PropTypes.string,
 
 }
 export default ReactReadLessMore;

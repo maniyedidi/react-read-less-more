@@ -1,6 +1,6 @@
 {
-  "name": "my-component",
-  "version": "1.0.0",
+  "name": "react-read-less-more",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,10 @@
     "transpile": "babel src -d dist",
     "prepublishOnly": "npm run transpile"
   },
-  "author": "",
+  "author": {
+    "name":"yedidi manikanta",
+    "email":"maniyedidi@gmail.com"
+  },
   "license": "ISC",
   "peerDependencies": {
     "react": "^16.3.0",
@@ -32,5 +35,16 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2"
-  }
+  },
+  "keywords": [
+    "react",
+    "paragraph",
+    "text",
+    "charLimit",
+    "dots",
+    "show more",
+    "ellipsis",
+    "read more",
+    "multiline"
+  ]
 }
