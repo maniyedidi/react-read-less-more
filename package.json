@@ -10,8 +10,8 @@
     "prepublishOnly": "npm run transpile"
   },
   "author": {
-    "name":"yedidi manikanta",
-    "email":"maniyedidi@gmail.com"
+    "name": "yedidi manikanta",
+    "email": "maniyedidi@gmail.com"
   },
   "license": "ISC",
   "peerDependencies": {
