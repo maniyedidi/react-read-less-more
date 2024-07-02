@@ -1,4 +1,4 @@
-.react-read-less-more .chip {
+.react-read-less-more .rlm-chip {
         display: inline-block;
         padding: 0 25px;
         height: 50px;
@@ -12,4 +12,5 @@
 }
 .react-read-less-more .show-less-more {
     padding-left: 10px;
+    cursor: pointer;
 }
