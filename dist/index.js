@@ -3,160 +3,104 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
+exports["default"] = void 0;
+var _react = _interopRequireDefault(require("react"));
 require("./styles.css");
-
-var _propTypes = require("prop-types");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ReactReadLessMore = function (_React$Component) {
-  _inherits(ReactReadLessMore, _React$Component);
-
+var _propTypes = _interopRequireDefault(require("prop-types"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+var itemLabel = function itemLabel(element, displayKey) {
+  return element !== null && _typeof(element) === "object" ? element[displayKey] : element;
+};
+var ReactReadLessMore = /*#__PURE__*/function (_React$Component) {
   function ReactReadLessMore(props) {
+    var _this;
     _classCallCheck(this, ReactReadLessMore);
-
-    var _this = _possibleConstructorReturn(this, (ReactReadLessMore.__proto__ || Object.getPrototypeOf(ReactReadLessMore)).call(this, props));
-
+    _this = _callSuper(this, ReactReadLessMore, [props]);
     _this.state = {
       showLessFlag: true
     };
     return _this;
   }
-
-  _createClass(ReactReadLessMore, [{
+  _inherits(ReactReadLessMore, _React$Component);
+  return _createClass(ReactReadLessMore, [{
+    key: "renderDataItem",
+    value: function renderDataItem(element, index) {
+      var _this$props = this.props,
+        _onClick = _this$props.onClick,
+        displayType = _this$props.displayType,
+        displayKey = _this$props.displayKey,
+        dataSeparator = _this$props.dataSeparator,
+        dataItemClass = _this$props.dataItemClass,
+        deleteChip = _this$props.deleteChip,
+        deleteIcon = _this$props.deleteIcon;
+      var label = itemLabel(element, displayKey);
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
+        key: "".concat(index, "-").concat(label)
+      }, /*#__PURE__*/_react["default"].createElement("span", {
+        className: displayType === "CHIP" ? "rlm-chip ".concat(dataItemClass || "") : "data-item",
+        onClick: function onClick() {
+          return _onClick && _onClick(element);
+        },
+        title: label
+      }, label, " ", deleteChip && /*#__PURE__*/_react["default"].createElement("span", {
+        className: deleteIcon,
+        onClick: function onClick(e) {
+          e.stopPropagation();
+          deleteChip(element);
+        }
+      }, "\u2715")), /*#__PURE__*/_react["default"].createElement("span", null, dataSeparator));
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
-
       var showLessFlag = this.state.showLessFlag;
-      var _props = this.props,
-          clsName = _props.clsName,
-          moreText = _props.moreText,
-          lessText = _props.lessText,
-          _onClick = _props.onClick,
-          displayType = _props.displayType,
-          displayKey = _props.displayKey,
-          dataSeparator = _props.dataSeparator,
-          displayCount = _props.displayCount,
-          children = _props.children,
-          data = _props.data,
-          dataItemClass = _props.dataItemClass,
-          deleteChip = _props.deleteChip,
-          deleteIcon = _props.deleteIcon;
-
-      return _react2.default.createElement(
-        "div",
-        {
-          className: clsName ? "react-read-less-more" : "react-read-less-more " + clsName
-        },
-        children && children.map(function (element, index) {
-          if (index < displayCount) {
-            return element;
-          } else if (!showLessFlag) {
-            return element;
-          }
-        }),
-        data && data.map(function (element, index) {
-          if (index < displayCount) {
-            return [_react2.default.createElement(
-              "span",
-              {
-                className: displayType === "CHIP" ? "rlm-chip " + (dataItemClass || "") : "data-item",
-                key: Math.random(),
-                onClick: function onClick() {
-                  return _onClick(element);
-                },
-                title: element[displayKey] || element
-              },
-              element[displayKey] || element,
-              " ",
-              deleteChip && _react2.default.createElement(
-                "span",
-                {
-                  className: "delete-icon",
-                  onClick: function onClick() {
-                    deleteChip(element);
-                  }
-                },
-                "\u2715"
-              )
-            ), _react2.default.createElement(
-              "span",
-              { key: Math.random() },
-              dataSeparator
-            )];
-          } else if (!showLessFlag) {
-            return [_react2.default.createElement(
-              "span",
-              {
-                key: Math.random(),
-                className: displayType === "CHIP" ? "rlm-chip " + (dataItemClass || "") : "data-item",
-                onClick: function onClick() {
-                  return _onClick(element);
-                },
-                title: element[displayKey] || element
-              },
-              element[displayKey] || element,
-              " ",
-              deleteChip && _react2.default.createElement(
-                "span",
-                {
-                  className: deleteIcon,
-                  onClick: function onClick() {
-                    deleteChip(element);
-                  }
-                },
-                "\u2715"
-              )
-            ), _react2.default.createElement(
-              "span",
-              { key: Math.random() },
-              dataSeparator
-            )];
-          }
-        }),
-        showLessFlag ? _react2.default.createElement(
-          "span",
-          {
-            className: "more-label show-less-more",
-            onClick: function onClick() {
-              return _this2.setState({ showLessFlag: false });
-            }
-          },
-          moreText
-        ) : _react2.default.createElement(
-          "span",
-          {
-            className: "less-label show-less-more",
-            onClick: function onClick() {
-              return _this2.setState({ showLessFlag: true });
-            }
-          },
-          " ",
-          lessText
-        )
-      );
+      var _this$props2 = this.props,
+        clsName = _this$props2.clsName,
+        moreText = _this$props2.moreText,
+        lessText = _this$props2.lessText,
+        displayCount = _this$props2.displayCount,
+        children = _this$props2.children,
+        data = _this$props2.data;
+      var childItems = _react["default"].Children.toArray(children);
+      var visible = function visible(items) {
+        return showLessFlag ? items.slice(0, displayCount) : items;
+      };
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        className: clsName ? "react-read-less-more ".concat(clsName) : "react-read-less-more"
+      }, visible(childItems), visible(data || []).map(function (element, index) {
+        return _this2.renderDataItem(element, index);
+      }), showLessFlag ? /*#__PURE__*/_react["default"].createElement("span", {
+        className: "more-label show-less-more",
+        onClick: function onClick() {
+          return _this2.setState({
+            showLessFlag: false
+          });
+        }
+      }, moreText) : /*#__PURE__*/_react["default"].createElement("span", {
+        className: "less-label show-less-more",
+        onClick: function onClick() {
+          return _this2.setState({
+            showLessFlag: true
+          });
+        }
+      }, " ", lessText));
     }
   }]);
-
-  return ReactReadLessMore;
-}(_react2.default.Component);
-
+}(_react["default"].Component);
 ReactReadLessMore.defaultProps = {
   clsName: "",
   moreText: "Show More",
@@ -170,20 +114,19 @@ ReactReadLessMore.defaultProps = {
   autoClose: false,
   deleteIcon: "delete-icon"
 };
-
 ReactReadLessMore.propTypes = {
-  clsName: _propTypes2.default.string,
-  moreText: _propTypes2.default.string,
-  lessText: _propTypes2.default.string,
-  onClick: _propTypes2.default.func,
-  displayType: _propTypes2.default.string,
-  displayKey: _propTypes2.default.string,
-  dataSeparator: _propTypes2.default.string,
-  displayCount: _propTypes2.default.number,
-  data: _propTypes2.default.array,
-  dataItemClass: _propTypes2.default.string,
-  deleteChip: _propTypes2.default.func,
-  autoClose: _propTypes2.default.bool,
-  deleteIcon: _propTypes2.default.string
+  clsName: _propTypes["default"].string,
+  moreText: _propTypes["default"].string,
+  lessText: _propTypes["default"].string,
+  onClick: _propTypes["default"].func,
+  displayType: _propTypes["default"].string,
+  displayKey: _propTypes["default"].string,
+  dataSeparator: _propTypes["default"].string,
+  displayCount: _propTypes["default"].number,
+  data: _propTypes["default"].array,
+  dataItemClass: _propTypes["default"].string,
+  deleteChip: _propTypes["default"].func,
+  autoClose: _propTypes["default"].bool,
+  deleteIcon: _propTypes["default"].string
 };
-exports.default = ReactReadLessMore;
+var _default = exports["default"] = ReactReadLessMore;

@@ -2,6 +2,11 @@ import React from "react";
 import "./styles.css";
 import PropTypes from "prop-types";
 
+const itemLabel = (element, displayKey) =>
+  element !== null && typeof element === "object"
+    ? element[displayKey]
+    : element;
+
 class ReactReadLessMore extends React.Component {
   constructor(props) {
     super(props);
@@ -9,93 +14,70 @@ class ReactReadLessMore extends React.Component {
       showLessFlag: true,
     };
   }
+
+  renderDataItem(element, index) {
+    const {
+      onClick,
+      displayType,
+      displayKey,
+      dataSeparator,
+      dataItemClass,
+      deleteChip,
+      deleteIcon,
+    } = this.props;
+    const label = itemLabel(element, displayKey);
+    return (
+      <React.Fragment key={`${index}-${label}`}>
+        <span
+          className={
+            displayType === "CHIP"
+              ? `rlm-chip ${dataItemClass || ""}`
+              : "data-item"
+          }
+          onClick={() => onClick && onClick(element)}
+          title={label}
+        >
+          {label}{" "}
+          {deleteChip && (
+            <span
+              className={deleteIcon}
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteChip(element);
+              }}
+            >
+              &#10005;
+            </span>
+          )}
+        </span>
+        <span>{dataSeparator}</span>
+      </React.Fragment>
+    );
+  }
+
   render() {
     const { showLessFlag } = this.state;
     const {
       clsName,
       moreText,
       lessText,
-      onClick,
-      displayType,
-      displayKey,
-      dataSeparator,
       displayCount,
       children,
       data,
-      dataItemClass,
-      deleteChip,
-      deleteIcon,
     } = this.props;
+    const childItems = React.Children.toArray(children);
+    const visible = (items) =>
+      showLessFlag ? items.slice(0, displayCount) : items;
     return (
       <div
         className={
-          clsName ? "react-read-less-more" : `react-read-less-more ${clsName}`
+          clsName ? `react-read-less-more ${clsName}` : "react-read-less-more"
         }
       >
-        {children &&
-          children.map((element, index) => {
-            if (index < displayCount) {
-              return element;
-            } else if (!showLessFlag) {
-              return element;
-            }
-          })}
-        {data &&
-          data.map((element, index) => {
-            if (index < displayCount) {
-              return [
-                <span
-                  className={
-                    displayType === "CHIP"
-                      ? `rlm-chip ${dataItemClass || ""}`
-                      : "data-item"
-                  }
-                  key={Math.random()}
-                  onClick={() => onClick(element)}
-                  title={element[displayKey] || element}
-                >
-                  {element[displayKey] || element}{" "}
-                  {deleteChip && (
-                    <span
-                      className="delete-icon"
-                      onClick={() => {
-                        deleteChip(element);
-                      }}
-                    >
-                      &#10005;
-                    </span>
-                  )}
-                </span>,
-                <span key={Math.random()}>{dataSeparator}</span>,
-              ];
-            } else if (!showLessFlag) {
-              return [
-                <span
-                  key={Math.random()}
-                  className={
-                    displayType === "CHIP"
-                      ? `rlm-chip ${dataItemClass || ""}`
-                      : "data-item"
-                  }                  
-                  onClick={() => onClick(element)}
-                  title={element[displayKey] || element}
-                >
-                  {element[displayKey] || element}{" "}
-                  {deleteChip && (
-                    <span
-                      className={deleteIcon}
-                      onClick={() => {
-                        deleteChip(element);
-                      }}
-                    >
-                      &#10005;
-                    </span>
-                  )}
-                </span>,
-                <span key={Math.random()}>{dataSeparator}</span>,
-              ];
-            }
-          })}
+        {visible(childItems)}
+        {visible(data || []).map((element, index) =>
+          this.renderDataItem(element, index)
+        )}
         {showLessFlag ? (
           <span
             className="more-label show-less-more"

@@ -1,6 +1,6 @@
 {
   "name": "react-read-less-more",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "react read more or less text or chips with delete ",
   "main": "dist/index.js",
   "scripts": {
@@ -22,27 +22,27 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "gh-pages": "^2.0.1",
-    "html-webpack-plugin": "^3.2.0",
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.13",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.5",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "style-loader": "^0.20.3",
-    "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "style-loader": "^4.0.0",
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0"
   },
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.8.1"
   },
   "keywords": [
     "react",
