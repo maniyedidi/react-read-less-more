@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import ReactReadLessMore from "../../src";
 const data = [
   { label: "Java" },
@@ -36,4 +36,4 @@ const App = () => (
     ></ReactReadLessMore>
   </React.Fragment>
 );
-render(<App />, document.getElementById("root"));
+createRoot(document.getElementById("root")).render(<App />);

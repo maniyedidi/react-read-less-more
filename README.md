@@ -3,6 +3,11 @@
 [![NPM](https://nodei.co/npm/react-read-less-more.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-read-less-more/)
 [![npm version](https://badge.fury.io/js/react-read-less-more.svg)]
 
+## 2.0.0
+- Supports React 18 and 19 (peer range `^18 || ^19`).
+- Fixes: `clsName` is now applied correctly, a single child no longer crashes, list keys are stable, `onClick` is optional, and the delete icon uses `deleteIcon` consistently (clicking it no longer triggers `onClick`).
+- Build toolchain upgraded (Babel 7, webpack 5); all `npm audit` issues resolved.
+
 ## Install
 ```
 npm install react-read-less-more --save
